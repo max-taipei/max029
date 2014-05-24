@@ -164,6 +164,11 @@ public class Player {
         onTable.addAll(騎兵區);
         onTable.addAll(未分類區);
 
+        onTable.addAll(內政區);
+        onTable.addAll(軍事區);
+        onTable.addAll(建築區);
+        onTable.addAll(殖民區);
+        onTable.addAll(行動牌區);
         return onTable;
 
     }
@@ -251,6 +256,19 @@ public class Player {
             case Sector.未分類區://17
                 return 未分類區;
 
+            case Sector.內政區://18
+                return 內政區;
+            case Sector.軍事區://19
+                return 軍事區;
+            case Sector.建築區://20
+                return 建築區;
+            case Sector.殖民區://21
+                return 殖民區;
+            case Sector.行動牌區://22
+                return 行動牌區;
+//            case Sector.建築區://19
+//                return 建築區;
+
             default:
                 return null;
         }
@@ -322,6 +340,38 @@ public class Player {
 
     public List<AgesCard> get步兵區() {
         return 步兵區;
+    }
+
+    public List<AgesCard> get內政區() {
+        return 內政區;
+    }
+
+    public void set內政區(List<AgesCard> 內政區) {
+        this.內政區 = 內政區;
+    }
+
+    public List<AgesCard> get軍事區() {
+        return 軍事區;
+    }
+
+    public void set軍事區(List<AgesCard> 軍事區) {
+        this.軍事區 = 軍事區;
+    }
+
+    public List<AgesCard> get建築區() {
+        return 建築區;
+    }
+
+    public void set建築區(List<AgesCard> 建築區) {
+        this.建築區 = 建築區;
+    }
+
+    public List<AgesCard> get殖民區() {
+        return 殖民區;
+    }
+
+    public void set殖民區(List<AgesCard> 殖民區) {
+        this.殖民區 = 殖民區;
     }
 
     public List<AgesCard> get建造中的奇蹟區() {
@@ -565,6 +615,11 @@ public class Player {
     private List<AgesCard> 圖書館區;
     private List<AgesCard> 競技場區;
 
+    private List<AgesCard> 內政區;
+    private List<AgesCard> 軍事區;
+    private List<AgesCard> 建築區;
+    private List<AgesCard> 殖民區;
+    private List<AgesCard> 行動區;
     private List<AgesCard> 建造中的奇蹟區;
     private List<Integer> wonderStages;
 
@@ -618,6 +673,11 @@ public class Player {
         手牌內政牌區 = new ArrayList<>();
         行動牌區 = new ArrayList<>();
         手牌軍事牌區 = new ArrayList<>();
+
+        內政區 = new ArrayList<>();
+        軍事區 = new ArrayList<>();
+        建築區 = new ArrayList<>();
+        殖民區 = new ArrayList<>();
 
     }
 
@@ -873,6 +933,36 @@ public class Player {
                     政府區.remove(0);
                 }
                 moveOneCard(this.手牌內政牌區, val, this.政府區);
+                this.科技.addPoints(-card.getCostIdea());
+                break;
+
+            case "內政":
+                while (內政區.size() > 0) {
+                    內政區.remove(0);
+                }
+                System.out.println("打出內政牌" + card.getId() + card.getName());
+                moveOneCard(this.手牌內政牌區, val, this.內政區);
+                this.科技.addPoints(-card.getCostIdea());
+                break;
+            case "軍事":
+                while (軍事區.size() > 0) {
+                    軍事區.remove(0);
+                }
+                moveOneCard(this.手牌內政牌區, val, this.軍事區);
+                this.科技.addPoints(-card.getCostIdea());
+                break;
+            case "建築":
+                while (建築區.size() > 0) {
+                    建築區.remove(0);
+                }
+                moveOneCard(this.手牌內政牌區, val, this.建築區);
+                this.科技.addPoints(-card.getCostIdea());
+                break;
+            case "殖民":
+                while (殖民區.size() > 0) {
+                    殖民區.remove(0);
+                }
+                moveOneCard(this.手牌內政牌區, val, this.殖民區);
                 this.科技.addPoints(-card.getCostIdea());
                 break;
             default:

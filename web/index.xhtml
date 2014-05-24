@@ -286,13 +286,22 @@
                         <tr>
 
 
-                            <td>劇院區</td> <td>圖書館區</td>
+                            <td>劇院區</td> 
+                            <td>圖書館區</td>
                             <td>殖民領土區</td>
                             <td>炮兵區</td>
-                            <td>特殊科技區</td>
+
                             <td>競技場區</td>
                             <td>空軍區</td>
                             <td>騎兵區</td>
+                            <td> 內政區 </td>
+                            <td> 軍事區 </td>
+                            <td> 建築區 </td>
+                            <td> 殖民區 </td>
+                            <td> 行動牌區 </td>
+                            <td></td>
+                            <td></td>
+
                         </tr><tr>
                             <td>
                                 <h:panelGrid  columns="13" cellpadding="0">
@@ -330,15 +339,7 @@
                                     </c:forEach>
                                 </h:panelGrid>
                             </td>
-                            <td>
-                                <h:panelGrid  columns="13" cellpadding="0">
-                                    <c:forEach  var="zzz" items="#{basicView.engine.getPlayerSector(1,13)}">
-                                        <h:commandButton title="黃:#{zzz.tokenYellow} 藍#{zzz.tokenBlue}" action="#{basicView.doNOTHING(zzz.seq)}" image="#{basicView.imgBaseDir}#{zzz.id}#{basicView.imgExt}" >
-                                            <f:ajax render="@this" />
-                                        </h:commandButton>    
-                                    </c:forEach>
-                                </h:panelGrid>
-                            </td>
+
                             <td>
                                 <h:panelGrid  columns="13" cellpadding="0">
                                     <c:forEach  var="zzz" items="#{basicView.engine.getPlayerSector(1,14)}">
@@ -360,6 +361,52 @@
                             <td>
                                 <h:panelGrid  columns="13" cellpadding="0">
                                     <c:forEach  var="zzz" items="#{basicView.engine.getPlayerSector(1,16)}">
+                                        <h:commandButton title="黃:#{zzz.tokenYellow} 藍#{zzz.tokenBlue}" action="#{basicView.doNOTHING(zzz.seq)}" image="#{basicView.imgBaseDir}#{zzz.id}#{basicView.imgExt}" >
+                                            <f:ajax render="@this" />
+                                        </h:commandButton>    
+                                    </c:forEach>
+                                </h:panelGrid>
+                            </td>
+
+                            <td>
+                                <h:panelGrid  columns="13" cellpadding="0">
+                                    <c:forEach  var="zzz" items="#{basicView.engine.getPlayerSector(1,18)}">
+                                        <h:commandButton title="黃:#{zzz.tokenYellow} 藍#{zzz.tokenBlue}" action="#{basicView.doNOTHING(zzz.seq)}" image="#{basicView.imgBaseDir}#{zzz.id}#{basicView.imgExt}" >
+                                            <f:ajax render="@this" />
+                                        </h:commandButton>    
+                                    </c:forEach>
+                                </h:panelGrid>
+                            </td>
+                            <td>
+                                <h:panelGrid  columns="13" cellpadding="0">
+                                    <c:forEach  var="zzz" items="#{basicView.engine.getPlayerSector(1,19)}">
+                                        <h:commandButton title="黃:#{zzz.tokenYellow} 藍#{zzz.tokenBlue}" action="#{basicView.doNOTHING(zzz.seq)}" image="#{basicView.imgBaseDir}#{zzz.id}#{basicView.imgExt}" >
+                                            <f:ajax render="@this" />
+                                        </h:commandButton>    
+                                    </c:forEach>
+                                </h:panelGrid>
+                            </td>
+                            <td>
+                                <h:panelGrid  columns="13" cellpadding="0">
+                                    <c:forEach  var="zzz" items="#{basicView.engine.getPlayerSector(1,20)}">
+                                        <h:commandButton title="黃:#{zzz.tokenYellow} 藍#{zzz.tokenBlue}" action="#{basicView.doNOTHING(zzz.seq)}" image="#{basicView.imgBaseDir}#{zzz.id}#{basicView.imgExt}" >
+                                            <f:ajax render="@this" />
+                                        </h:commandButton>    
+                                    </c:forEach>
+                                </h:panelGrid>
+                            </td>
+                            <td>
+                                <h:panelGrid  columns="13" cellpadding="0">
+                                    <c:forEach  var="zzz" items="#{basicView.engine.getPlayerSector(1,21)}">
+                                        <h:commandButton title="黃:#{zzz.tokenYellow} 藍#{zzz.tokenBlue}" action="#{basicView.doNOTHING(zzz.seq)}" image="#{basicView.imgBaseDir}#{zzz.id}#{basicView.imgExt}" >
+                                            <f:ajax render="@this" />
+                                        </h:commandButton>    
+                                    </c:forEach>
+                                </h:panelGrid>
+                            </td>
+                            <td>
+                                <h:panelGrid  columns="13" cellpadding="0">
+                                    <c:forEach  var="zzz" items="#{basicView.engine.getPlayerSector(1,22)}">
                                         <h:commandButton title="黃:#{zzz.tokenYellow} 藍#{zzz.tokenBlue}" action="#{basicView.doNOTHING(zzz.seq)}" image="#{basicView.imgBaseDir}#{zzz.id}#{basicView.imgExt}" >
                                             <f:ajax render="@this" />
                                         </h:commandButton>    
